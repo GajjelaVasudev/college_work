@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input.valid {
+      border-color: green;
+      background: #e8fbe8;
+    }
+
+    .form-group input.invalid {
+      border-color: red;
+      background: #fdeaea;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" required>
+        <small class="error">Full Name is required.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <small class="error">Please enter a valid email.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6">
+        <small class="error">Password must be at least 6 characters and include a special character.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required>
+        <small class="error">Phone must be 10 digits.</small>
+      </div>
+
+      <button type="submit">Register</button>
+      <div class="success-message">Registration Successful!</div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
