@@ -1,0 +1,85 @@
+/* src/style.css */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  margin: 40px auto;
+  width: 80%;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+h1::before {
+  content: "📚";
+  font-size: 1.8rem;
+}
+
+h2 {
+  color: #444;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+.book-card {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.book-card h3 {
+  margin: 0 0 8px;
+}
+
+.book-card p {
+  margin: 4px 0;
+}
+
+button {
+  background: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #005fa3;
+}
+
+#cart {
+  margin-top: 30px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cart-item button {
+  background: crimson;
+  padding: 5px 10px;
+}

@@ -1,0 +1,98 @@
+/* DARK HACKER THEME */
+body {
+  margin: 0;
+  padding: 20px;
+  background: #000000;                 /* pure black */
+  font-family: "Courier New", monospace;
+  color: #00ff9d;                      /* neon green text */
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 30px;
+  color: #00ff9d;
+  text-shadow: 0 0 8px #00ff9d;
+}
+
+/* Book list layout */
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Book card */
+.book-card {
+  display: flex;
+  gap: 20px;
+  background: #0a0a0a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #00ff9d;
+  box-shadow: 0 0 15px rgba(0,255,157,0.3);
+  transition: 0.3s;
+}
+
+.book-card:hover {
+  box-shadow: 0 0 25px rgba(0,255,157,0.7);
+}
+
+/* Book cover image */
+.book-card img {
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #00ff9d;
+}
+
+/* View Details button */
+.details-btn,
+.back-btn {
+  padding: 10px 15px;
+  background: #00ff9d;
+  color: #000000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0,255,157,0.7);
+  transition: 0.2s;
+}
+
+.details-btn:hover,
+.back-btn:hover {
+  background: #000;
+  color: #00ff9d;
+  box-shadow: 0 0 20px rgba(0,255,157,1);
+}
+
+/* Book Detail Page */
+.book-detail {
+  background: #0f0f0f;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: auto;
+  border: 1px solid #00ff9d;
+  box-shadow: 0 0 25px rgba(0,255,157,0.6);
+}
+
+.detail-img {
+  width: 260px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  display: block;
+  border: 1px solid #00ff9d;
+}
+
+.desc {
+  line-height: 1.6;
+  color: #e2ffe8;
+  font-size: 16px;
+}
