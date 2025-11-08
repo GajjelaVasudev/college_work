@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error{
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+function validateForm(event){
+    event.preventDefault();//prevent page refresh
+    
+    //clear previous errors
+    let errorSpans=document.querySelectorAll(".error");
+    errorSpans.forEach(span=>span.innerHTML="");
+
+    let isValid=true;
+    let fullname = document.forms["myForm"]["fname"].value.trim();
+    let username = document.forms["myForm"]["username"].value.trim();
+    let password = document.forms["myForm"]["password"].value;
+    let confirmPassword = document.forms["myForm"]["confirmPassword"].value;
+    let email = document.forms["myForm"]["email"].value.trim();
+    let mobile = document.forms["myForm"]["mobile"].value.trim();
+    let dob = document.forms["myForm"]["dob"].value;
+    let address = document.forms["myForm"]["address"].value.trim();
+    let pincode = document.forms["myForm"]["pincode"].value.trim();
+
+    //Name
+    if(fullname===""){
+        document.getElementById("nameError").innerHTML="Name is required";
+        isValid=false;
+    }
+
+    //Username: only alphabets
+    let userRegex=/^[A-Za-z]+$/;
+    if(!userRegex.test(username)){
+        document.getElementById("usernameError").innerHTML="Only alphabets allowed";
+        isValid=false;
+    }
+
+    //Password
+    let passRegex= /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$/;
+    if(!passRegex.test(password)){
+        document.getElementById("passwordError").innerHTML="Min 8 char, include upper, lower, digit, special char";
+        isValid=false;
+    }
+
+    //Confirm password
+    if(password!==confirmPassword || confirmPassword===""){
+        document.getElementById("confirmPasswordError").innerHTML="Passwords do not match";
+        isValid=false;
+    }
+
+    //Email
+    let emailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+    if(!emailRegex.test(email)){
+        document.getElementById("emailError").innerHTML="Enter valid email";
+        isValid=false;
+    }
+
+    //Mobile
+    let mobileRegex=/^[6-9][0-9]{9}$/;
+    if(!mobileRegex.test(mobile)){
+        document.getElementById("mobileError").innerHTML="Enter valid 10-digit mobile number";
+        isValid=false;
+    }
+
+    //DOB
+    if(dob===""){
+        document.getElementById("dobError").innerHTML="Please select your DOB";
+        isValid=false;
+    }else{
+        let birthDate=new Date(dob);
+        let today=new Date();
+        let age=today.getFullYear()-birthDate.getFullYear();
+        if(age<18){
+            document.getElementById("dobError").innerHTML="Age must be at least 18 years";
+            isValid=false;
+        }
+    }
+
+    //Gender
+    let gender=document.querySelector('input[name="gender"]:checked');
+    if(!gender){
+        document.getElementById("genderError").innerHTML="Please select your gender";
+        isValid=false;
+    }
+
+    //Address
+    if(address.length<10){
+        document.getElementById("addressError").innerHTML="Address must be at least 10 characters";
+        isValid=false;
+    }
+
+    //Pincode
+    let pinRegex=/^[0-9]{6}$/;
+    if(!pinRegex.test(pincode)){
+        document.getElementById("pincodeError").innerHTML="Enter valid 6-digit pincode";
+        isValid=false;
+    }
+
+    if(isValid){
+        alert("Form submitted successfully!");
+    }
+}
+</script>
+
+</head>
+<body>
+    <h2>Registration Form</h2>
+  <form name="myForm" onsubmit="validateForm(event)">
+    <label>Full Name: </label>
+    <input type="text" name="fname">
+    <span id="nameError" class="error"></span><br><br>
+
+    <label>Username: </label>
+    <input type="text" name="username">
+    <span id="usernameError" class="error"></span><br><br>
+
+    <label>Password: </label>
+    <input type="password" name="password">
+    <span id="passwordError" class="error"></span><br><br>
+
+    <label>Confirm Password: </label>
+    <input type="password" name="confirmPassword">
+    <span id="confirmPasswordError" class="error"></span><br><br>
+
+    <label>Email: </label>
+    <input type="text" name="email">
+    <span id="emailError" class="error"></span><br><br>
+
+    <label>Mobile: </label>
+    <input type="text" name="mobile">
+    <span id="mobileError" class="error"></span><br><br>
+
+    <label>Date of Birth: </label>
+    <input type="date" name="dob">
+    <span id="dobError" class="error"></span><br><br>
+
+    <label>Gender: </label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <span id="genderError" class="error"></span><br><br>
+
+    <label>Address: </label>
+    <textarea name="address"></textarea>
+    <span id="addressError" class="error"></span><br><br>
+
+    <label>Pincode: </label>
+    <input type="text" name="pincode">
+    <span id="pincodeError" class="error"></span><br><br>
+
+    <input type="submit" value="Register">
+  </form>
+</body>
+</html>

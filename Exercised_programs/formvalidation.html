@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registation Form</h2>
+    <form name="myForm" onsubmit="return validateForm()">
+        <label>username</label>
+        <input type="text" name="username"><br><br>
+        <label>Email:</label>
+        <input type="text" name="email"><br><br>
+        <label for=>Password</label>
+        <input type="password" name="password"><br><br>
+        <label>Age:</label>
+        <input type="text" name="age"><br><br>
+        <input type="submit" value="Register">
+    </form>
+<script>
+    function validateForm()
+    {
+        let username=document.forms["myform"]["username"].value;
+        let password=document.forms["myform"]["password"].value;
+        let age=document.forms["myform"]["age"].value;
+        if(username==""){
+            alert("Username must be filled out");
+            return false;
+        }
+        if(email==""||!email.include("@")){
+            return false;
+            
+        }
+        if(password.length<6){
+            alert("Password must be at least 6 characters");
+        }
+        if(isNaN(age)||age<=0){
+            alert("Please enter a valid age");
+            return false;
+        }
+
+    }
+
+</script>
+</body>
+</html>

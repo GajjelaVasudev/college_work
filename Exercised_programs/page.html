@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .navbar {
+      height: 10vh;
+      background-color: #080101;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    .title {
+      color: aliceblue;
+      font-size: larger;
+      font-weight: bold;
+    }
+
+    .links a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #080101;
+      background-color: aliceblue;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      background-color: #ddd;
+    }
+
+    .main {
+      height: 75vh;
+      display: flex;
+      padding: 30px;
+    }
+
+    .left {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      width: 120px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .center {
+      width: 80%;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .center p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      height: 10vh;
+      background-color: #130d0d;
+      border-top: 2px solid #ccc;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      color: #ccc;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      font-size: 20px;
+      color: #cabdbd;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="title">My Profile</div>
+    <div class="links">
+      <a href="https://www.kluniversity.in/">Login</a>
+      <a href="fedf.pdf">Signup</a>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="left">
+      <img src="yogi.jpg" alt="yogi" />
+    </div>
+    <div class="center">
+      <p><strong>Name:</strong> Palleti Yogendra Reddy</p>
+      <p><strong>Reg No:</strong> 2400030369</p>
+      <p><strong>Department:</strong> CSE</p>
+      <p><strong>Email:</strong> 2400030369@kluniversity.com</p>
+      <p><strong>Contact:</strong> 9876543210</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</body>
+</html>

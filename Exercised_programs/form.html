@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo</title>
+</head>
+<body>
+    <form action="https://newerp.kluniversity.in">
+    <caption>Student Registation System</caption>
+    <br><br> 
+    <label for="text">First Name:</label>
+    <input type="text" name="firstname" id="fn">
+    <br>
+    <label for="text">Last Name:</label>
+    <input type="text" name="lastname" id="ln">
+    <br>
+     <label for="gn">Gender:</label>
+     <input type="radio" name="gender" value="male">M
+     <input type="radio" name="gender" value="female">F 
+     <br>
+     <label for="date">DOB:</label>
+     <input type="date" name="dob" id="dob">
+     <br>
+    <label for="br">Branch:</label>
+<select id="br" name="branch">
+    <option value="">--select--</option>
+  <option value="cse">CSE</option>
+  <option value="ece">ECE</option>
+  <option value="eee">EEE</option>
+</select>
+<br>
+<label for="text">Email:</label>
+<input type="email" name="mail" id="mail" required>
+<br>
+<label for="phone">contact no:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" >
+<br>
+<label for="text">Address:</label>
+<textarea name="address" id="address" rows="10"></textarea>
+<br>
+<label for="lang">Languages Known:</label>
+<input type="radio">English
+<input type="radio">Hindi
+<input type="radio">Telugu
+<input type="radio">Tamil
+<br>
+<label>Upload Resume:</label>
+<input type="file"> <br>
+<button>submit</button>
+</form>
+</body>
+</html>
